@@ -1,6 +1,6 @@
-name: suho-md
+name: makima-xd
 services:
-  - name: suho-md-service
+  - name: makima-xd-service
     type: web
     ports:
       - 5000
