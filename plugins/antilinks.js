@@ -29,7 +29,7 @@ lite({
     if (hasBadWord) {
       await conn.sendMessage(from, { delete: m.key });
       await conn.sendMessage(from, {
-        text: `🚫 *Bad language is not allowed!*\n@${sender.split('@')[0]}`,
+        text: `🩸 *Makima’s Command:*\nYour tongue displeases me...\n\n@${sender.split('@')[0]} dared to use forbidden words.`,
         mentions: [sender]
       }, { quoted: m });
       return;
@@ -38,7 +38,7 @@ lite({
     if (hasLink) {
       await conn.sendMessage(from, { delete: m.key });
       await conn.sendMessage(from, {
-        text: `⚠️ *Links are not allowed in this group!*\n@${sender.split('@')[0]} has been removed.`,
+        text: `🔮 *Makima’s Control:* Links are forbidden in my domain.\n\n@${sender.split('@')[0]} has been *removed* under my order.`,
         mentions: [sender]
       }, { quoted: m });
 
@@ -46,6 +46,6 @@ lite({
     }
   } catch (error) {
     console.error(error);
-    reply("❌ Error while processing message.");
+    reply("💔 *Makima sighs...* Something went wrong while enforcing control.");
   }
 });
