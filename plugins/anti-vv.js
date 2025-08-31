@@ -3,7 +3,7 @@ const { lite } = require("../lite");
 lite({
   pattern: "vv",
   alias: ["viewonce", 'retrive'],
-  react: '🐳',
+  react: '🩸',
   desc: "Owner Only - retrieve quoted message back to user",
   category: "owner",
   filename: __filename
@@ -11,13 +11,13 @@ lite({
   try {
     if (!isCreator) {
       return await client.sendMessage(from, {
-        text: "*📛 This is an owner command.*"
+        text: "🩸 *Makima stares coldly...* This command belongs only to my Master."
       }, { quoted: message });
     }
 
     if (!match.quoted) {
       return await client.sendMessage(from, {
-        text: "*🍁 Please reply to a view once message!*"
+        text: "🔮 *Makima whispers:* Reply to a *view once* message if you wish me to uncover it..."
       }, { quoted: message });
     }
 
@@ -30,14 +30,14 @@ lite({
       case "imageMessage":
         messageContent = {
           image: buffer,
-          caption: match.quoted.text || '',
+          caption: match.quoted.text || '📸 Makima reveals the hidden image...',
           mimetype: match.quoted.mimetype || "image/jpeg"
         };
         break;
       case "videoMessage":
         messageContent = {
           video: buffer,
-          caption: match.quoted.text || '',
+          caption: match.quoted.text || '🎥 Makima allows you to see what was forbidden...',
           mimetype: match.quoted.mimetype || "video/mp4"
         };
         break;
@@ -50,7 +50,7 @@ lite({
         break;
       default:
         return await client.sendMessage(from, {
-          text: "❌ Only image, video, and audio messages are supported"
+          text: "❌ *Makima smirks:* Only *image, video, and audio* messages bend to my control."
         }, { quoted: message });
     }
 
@@ -58,7 +58,7 @@ lite({
   } catch (error) {
     console.error("vv Error:", error);
     await client.sendMessage(from, {
-      text: "❌ Error fetching vv message:\n" + error.message
+      text: "💔 *Makima sighs softly...* Something went wrong:\n" + error.message
     }, { quoted: message });
   }
 });
