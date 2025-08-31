@@ -8,7 +8,7 @@ const { runtime } = require('../lib/functions');
 lite({
   pattern: 'version',
   alias: ["changelog", "cupdate", "checkupdate"],
-  react: '🚀',
+  react: '🩸',
   desc: "Check bot's version, system stats, and update info.",
   category: 'main',
   filename: __filename
@@ -26,7 +26,7 @@ lite({
       changelog = localData.changelog;
     }
 
-    const rawVersionUrl = 'https://raw.githubusercontent.com/NaCkS-ai/Sung-Suho-MD/main/data/version.json';
+    const rawVersionUrl = 'https://raw.githubusercontent.com/NaCkS-ai/Makima-XD/main/data/version.json';
     let latestVersion = 'Unknown';
     let latestChangelog = 'No changelog available.';
     try {
@@ -55,20 +55,40 @@ lite({
     const githubRepo = 'https://github.com/NaCkS-ai/Sung-Suho-MD';
 
     // Check update status
-    let updateMessage = `✅ Your bot is up-to-date!`;
+    let updateMessage = `🔗 *Makima whispers:* Your bot obeys — it’s up to date.`;
     if (localVersion !== latestVersion) {
-      updateMessage = `🚀 Your bot is outdated!
-🔹 *Current Version:* ${localVersion}
-📲 *Latest Version:* ${latestVersion}
-
-Use *.update* to update.`;
+      updateMessage = `🩸 *Makima tilts her head...* Your bot is falling behind.\n\n` +
+        `🔹 *Current Version:* ${localVersion}\n📲 *Latest Version:* ${latestVersion}\n\n` +
+        `⚡ Use *.update* to catch up before she loses interest.`;
     }
 
-    const statusMessage = `🌟 *Good ${new Date().getHours() < 12 ? 'Morning' : 'Night'}, ${pushname}!* 🌟\n\n` +
-      `📌 *Bot Name:* SUNG-SUHO-MD\n🔖 *Current Version:* ${localVersion}\n📢 *Latest Version:* ${latestVersion}\n📂 *Total Plugins:* ${pluginCount}\n🔢 *Total Commands:* ${totalCommands}\n\n` +
-      `💾 *System Info:*\n⏳ *Uptime:* ${uptime}\n📟 *RAM Usage:* ${ramUsage}MB / ${totalRam}MB\n⚙️ *Host Name:* ${hostName}\n📅 *Last Update:* ${lastUpdate}\n\n` +
-      `📝 *Changelog:*\n${latestChangelog}\n\n` +
-      `⭐ *GitHub Repo:* ${githubRepo}\n👤 *Owner:* [Mr Sung Suho](https://github.com/NaCkS-ai)\n\n${updateMessage}\n\n🚀 *Hey! Don't forget to fork & star the repo!*`;
+    const statusMessage = `
+╭─❍『 🩸 ᴍᴀᴋɪᴍᴀ ꜱʏꜱᴛᴇᴍ ꜱᴛᴀᴛᴜꜱ 』❍─
+│
+│ 🌙 *Good ${new Date().getHours() < 12 ? 'Morning' : 'Night'}, ${pushname}*
+│
+│ 📌 *Bot Name:* MAKIMA-XD
+│ 🔖 *Current Version:* ${localVersion}
+│ 📢 *Latest Version:* ${latestVersion}
+│ 📂 *Plugins:* ${pluginCount}
+│ 🔢 *Commands:* ${totalCommands}
+│
+│ 💾 *System Info:*
+│ ⏳ Uptime: ${uptime}
+│ 📟 RAM: ${ramUsage}MB / ${totalRam}MB
+│ ⚙️ Host: ${hostName}
+│ 📅 Last Update: ${lastUpdate}
+│
+│ 📝 *Changelog:*
+│ ${latestChangelog}
+│
+╰─⭓ *Under Makima’s Control* 🩸
+
+${updateMessage}
+
+⭐ Repo: ${githubRepo}
+👤 Owner: [Mr Sung Suho](https://github.com/NaCkS-ai)
+`;
 
     // Send the status message with an image
     await conn.sendMessage(from, {
@@ -80,13 +100,13 @@ Use *.update* to update.`;
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
           newsletterJid: '120363402507750390@newsletter',
-          newsletterName: 'ᴍʀ sᴜɴɢ',
+          newsletterName: 'ᴍᴀᴋɪᴍᴀ ᴄᴏɴᴛʀᴏʟ',
           serverMessageId: 143
         }
       }
     }, { quoted: mek });
   } catch (error) {
     console.error('Error fetching version info:', error);
-    reply('❌ An error occurred while checking the bot version.');
+    reply('💔 *Makima sighs...* I couldn’t check the version this time.');
   }
 });
