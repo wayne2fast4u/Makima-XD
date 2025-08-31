@@ -1,21 +1,21 @@
 {
-  "name": "SUHO-MD",
+  "name": "MAKIMA-XD",
   "description": "Javascript WhatsApp bot made by Mr Sung",
-  "logo": "https://files.catbox.moe/vcofni.jpg",
-  "keywords": ["Sung-Suho-MD","LITE-XD"],
+  "logo": "https://files.catbox.moe/8vq804.jpg",
+  "keywords": ["MAKIMA-XD","LITE-XD"],
   "success_url": "/",
 
     "stack": "container",
   "env": {
     "SESSION_ID": {
-      "description": "Must Start with 'suho~'",
+      "description": "Must Start with 'makima~'",
       "required": true,
       "value": ""
     },
       "BOT_NAME": {
         "description": "write here your bot name.",
         "required": true,
-        "value": "sᴜʜᴏ-ᴍᴅ"      
+        "value": "makima-xd"      
     },  
     "MODE": {
       "description": "Set private/public/inbox/groups",
@@ -37,7 +37,7 @@
     "OWNER_NUMBER": {
       "description": "Put only one Owner Number Here",
       "required": true,
-      "value": "27813374457"
+      "value": "27649342626"
     },
     
     "PRESENCE": {
