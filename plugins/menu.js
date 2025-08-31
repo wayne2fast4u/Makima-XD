@@ -1,5 +1,3 @@
-
-
 const fs = require('fs');
 const config = require('../settings');
 const { lite, commands } = require('../lite');
@@ -7,7 +5,6 @@ const axios = require('axios');
 const { getPrefix } = require('../lib/prefix');
 const { runtime } = require('../lib/functions');
 const moment = require("moment-timezone"); // Use timezone-aware moment
-
 
 lite({
     pattern: "menu",
@@ -33,72 +30,64 @@ async (conn, mek, m, {
                 menu[cmd.category] += `│ ⬡ ${cmd.pattern}\n`;
             }
         }
+
         const currentTime = moment().tz("Africa/Harare").format("HH:mm:ss");
         const currentDate = moment().tz("Africa/Harare").format("dddd, MMMM Do YYYY");
         const prefix = getPrefix();
 
+        // Makima-themed menu formatting
         let madeMenu = `
-╭─❍ 👑 ${config.BOT_NAME} ❍
-│ 👤 ᴜsᴇʀ: ${pushname}
-│ 🌐 ᴍᴏᴅᴇ: [${config.MODE}]
-│ ✨ ᴘʀᴇғɪx: [${prefix}]
-│ 🕒 ᴛɪᴍᴇ   : ${currentTime}
-│ 📆 ᴅᴀᴛᴇ   : ${currentDate}
-│ 🔁 ᴜᴘᴛɪᴍᴇ : ${runtime(process.uptime())}
-│ 📲 ᴛᴏᴛᴀʟ ᴄᴍᴅs: ${commands.length}
-│  👑 ᴏᴡɴᴇʀ: ᴍʀ sᴜɴɢ 
-│ 📌 ᴠᴇʀsɪᴏɴ: ${config.version}-ᴀʟᴘʜᴀ
-╰─────────────✦
+╔════════════════════════════╗
+║ 🩸 suho x ${config.BOT_NAME} 🩸 ║
+╠════════════════════════════╣
+║ 👤 User       : ${pushname}
+║ 🌐 Mode       : [${config.MODE}]
+║ ✨ Prefix     : [${prefix}]
+║ 🕒 Time       : ${currentTime}
+║ 📆 Date       : ${currentDate}
+║ 🔁 Uptime     : ${runtime(process.uptime())}
+║ 📲 Total Cmds : ${commands.length}
+║ 👑 Owner      : ᴍᴀᴋɪᴍᴀ x ᴍʀ sᴜɴɢ
+║ 📌 Version    : ${config.version}-ᴀʟᴘʜᴀ
+╚════════════════════════════╝
 
-┌──『 😹 ᴍᴀɪɴ ᴄɴᴅs 😿  』
-${menu.main || '│ (No commands found)'}
-└────────────✦
+─────❖ MAIN COMMANDS ❖─────
+${menu.main || 'No commands found'}
 
-┌──『 📥 ᴅᴏᴡɴʟᴏᴀᴅ ᴄᴍᴅs 📥 』
-${menu.download || '│ (No commands found)'}
-└────────────✦
+─────❖ DOWNLOAD COMMANDS ❖─────
+${menu.download || 'No commands found'}
 
-┌──『 🧑‍💻 ᴏᴡɴᴇʀ ᴄᴍᴅs 🧑‍💻 』
-${menu.owner || '│ (No commands found)'}
-└────────────✦
+─────❖ OWNER COMMANDS ❖─────
+${menu.owner || 'No commands found'}
 
-┌──『 🧠 ᴀɪ ᴄᴍᴅs 🧠』
-${menu.ai || '│ (No commands found)'}
-└────────────✦
+─────❖ AI COMMANDS ❖─────
+${menu.ai || 'No commands found'}
 
-┌──『 👥 ɢʀᴏᴜᴘ ᴄᴍᴅs 👥 』
-${menu.group || '│ (No commands found)'}
-└────────────✦
+─────❖ GROUP COMMANDS ❖─────
+${menu.group || 'No commands found'}
 
-┌──『 ✨ Logo/Anime Commands 』
-${menu.anime || '│ (No commands found)'}
-└────────────✦
+─────❖ LOGO/ANIME COMMANDS ❖─────
+${menu.anime || 'No commands found'}
 
-┌──『 🔄 ᴄᴏɴᴠᴇʀᴛ ᴄᴍᴅs 🔄 』
-${menu.convert || '│ (No commands found)'}
-└────────────✦
+─────❖ CONVERT COMMANDS ❖─────
+${menu.convert || 'No commands found'}
 
-┌──『 🎭 ʀᴇᴀᴄᴛɪᴏɴ ᴄᴍᴅs 🎭 』
-${menu.reaction || '│ (No commands found)'}
-└────────────✦
+─────❖ REACTION COMMANDS ❖─────
+${menu.reaction || 'No commands found'}
 
-┌──『 🎉 ғᴜɴ ᴄᴍs 🎉 』
-${menu.fun || '│ (No commands found)'}
-└────────────✦
+─────❖ FUN COMMANDS ❖─────
+${menu.fun || 'No commands found'}
 
-┌──『 🎨 ʟᴏɢᴏ ᴄᴍᴅs 🎨 』
-${menu.logo || '│ (No commands found)'}
-└─────────────✦
+─────❖ LOGO COMMANDS ❖─────
+${menu.logo || 'No commands found'}
 
-┌──『 🪄 sᴇᴛᴛɪɴɢs ᴄᴍᴅs 🪄 』
-${menu.settings || '│ (No commands found)'}
-└─────────────✦
+─────❖ SETTINGS COMMANDS ❖─────
+${menu.settings || 'No commands found'}
 
-┌──『 🕵️‍♂️ ᴏᴛʜᴇʀ ᴄᴍᴅs 🕵️‍♂️ 』
-${menu.other || '│ (No commands found)'}
-└─────────────✦
+─────❖ OTHER COMMANDS ❖─────
+${menu.other || 'No commands found'}
 
-> ${config.DESCRIPTION}
+💀 🩸 Makima watches over all commands 🩸 💀
 `;
 
         await conn.sendMessage(
@@ -119,7 +108,6 @@ ${menu.other || '│ (No commands found)'}
             },
             { quoted: mek }
         );
-
 
         await conn.sendMessage(from, {
             audio: fs.readFileSync('./all/menu.m4a'),
