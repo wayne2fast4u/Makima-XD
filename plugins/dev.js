@@ -6,35 +6,35 @@ lite({
     alias: ["developer", "dev"],
     desc: "Displays the developer info",
     category: "owner",
-    react: "👨‍💻",
+    react: "👹", // Makima vibe instead of 👨‍💻
     filename: __filename
 }, async (conn, mek, m, {
     from, reply, pushname
 }) => {
     try {
-        const name = pushname || "there";
+        const name = pushname || "Human";
 
         const text = `
-╭─⌈ *SUHO-MD DEV* ⌋
+╭─❍『 🩸 ᴍᴀᴋɪᴍᴀ's ᴄᴏɴᴛʀᴀᴄᴛ 』❍─
 │
-│ 👋 Hello *${name}*,
+│ 👁 Hello, *${name}*...
 │
-│ 🤖 I’m *the owner* of a multifunctional
-│    WhatsApp Bot built to assist you!
+│ 🔗 You seek *my master*?
+│    Then listen carefully.
 │
 │ 👨‍💻 *OWNER DETAILS:*
 │ ───────────────
-│ 🧠 *Name* : Mr Sung
+│ 🧠 *Name* : Mr Sung (Suho)
 │ 🕯️ *Age* : +20
 │ ☎️ *Contact* : wa.me/1(236)362-1958
 │ ▶️ *YouTube* :
 │    https://youtube.com/@malvintech2
 │
-│ ⚡ Powered by *Mr Sung*
-╰───────────────`.trim();
+│ 🩸 Power flows only through him.
+╰─⭓ ᴏʙᴇʏ ᴍᴀᴋɪᴍᴀ ──────⭓`.trim();
 
         await conn.sendMessage(from, {
-            image: { url: config.MENU_IMAGE_URL || 'https://telegra.ph/file/3b66b4f8bd5c0556d4fb9.jpg' },
+            image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/qsy2xx.jpg' }, // Makima art
             caption: text,
             contextInfo: {
                 mentionedJid: [m.sender],
@@ -42,7 +42,7 @@ lite({
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363402507750390@newsletter',
-                    newsletterName: '『 sᴜʜᴏ ᴍᴅ 』',
+                    newsletterName: '『 ᴍᴀᴋɪᴍᴀ x sᴜʜᴏ 』',
                     serverMessageId: 143
                 }
             }
