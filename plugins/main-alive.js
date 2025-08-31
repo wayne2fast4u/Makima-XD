@@ -8,7 +8,7 @@ lite({
     alias: ["status", "online", "a"],
     desc: "Check if bot is alive and running",
     category: "main",
-    react: "⚡",
+    react: "🩸",
     filename: __filename
 }, async (conn, mek, m, { from, sender, reply }) => {
     try {
@@ -17,17 +17,18 @@ lite({
         const uptime = runtime(process.uptime());
 
         const caption = `
-╭━━〔 🤖 *${config.BOT_NAME} STATUS* 〕━━⬣
-┃ 🟢 *Bot is Active & Online!*
-┃
-┃ 👑 *ᴏᴡɴᴇʀ:* ${config.OWNER_NAME}
-┃ 🔖 *ᴠᴇʀsɪᴏɴ:* ${config.version}
-┃ 🛠️ *ᴘʀᴇғɪx:* [ ${config.PREFIX} ]
-┃ ⚙️ *ᴍᴏᴅᴇ:* [ ${config.MODE} ]
-┃ 💾 *ʀᴀᴍ:* ${heapUsed}MB / ${totalMem}MB
-┃ 🖥️ *ʜᴏsᴛ:* ${os.hostname()}
-┃ ⏱️ *ᴜᴘᴛɪᴍᴇ:* ${uptime}
-╰━━━━━━━━━━━━━━⬣
+╭─❍『 🩸 ᴍᴀᴋɪᴍᴀ ʙᴏᴛ ᴅɪᴀɢɴᴏsᴛɪᴄ 』❍─
+│
+│ 👁 *Status:* Active & Online
+│ 👑 *Owner:* ${config.OWNER_NAME}
+│ 🔖 *Version:* ${config.version}
+│ 🛠️ *Prefix:* [ ${config.PREFIX} ]
+│ ⚙️ *Mode:* [ ${config.MODE} ]
+│ 💾 *RAM Usage:* ${heapUsed}MB / ${totalMem}MB
+│ 🖥️ *Host:* ${os.hostname()}
+│ ⏱️ *Uptime:* ${uptime}
+│
+╰─⭓ *Makima observes everything...* 🩸
 > ${config.DESCRIPTION}
         `.trim();
 
@@ -40,7 +41,7 @@ lite({
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363398430045533@newsletter',
-                    newsletterName: 'sᴜɴɢ sᴜʜᴏ ᴍᴅ',
+                    newsletterName: 'ᴍᴀᴋɪᴍᴀ x sᴜʜᴏ',
                     serverMessageId: 143
                 }
             }
@@ -48,6 +49,6 @@ lite({
 
     } catch (e) {
         console.error("Alive Error:", e);
-        reply(`❌ *Error:* ${e.message}`);
+        reply(`❌ *Makima whispers:* ${e.message}`);
     }
 });
