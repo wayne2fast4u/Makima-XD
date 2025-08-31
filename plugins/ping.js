@@ -3,7 +3,8 @@ const { lite, commands } = require('../lite');
 
 lite({
     pattern: "ping",
-    alias: ["speed","pong"],use: '.ping',
+    alias: ["speed","pong"],
+    use: '.ping',
     desc: "Check bot's response time.",
     category: "main",
     react: "⚡",
@@ -13,10 +14,11 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
     try {
         const start = new Date().getTime();
 
-        const reactionEmojis = ['🔥', '⚡', '🚀', '💨', '🎯', '🎉', '🌟', '💥', '🕐', '🔹'];
-        const textEmojis = ['💎', '🏆', '⚡️', '🚀', '🎶', '🌠', '🌀', '🔱', '🛡️', '✨'];
+        // Makima/Chainsaw Man themed emojis
+        const reactionEmojis = ['🩸', '💀', '⚡', '🔥', '🕷️', '💥', '☠️', '🩸', '🕐', '🔹'];
+        const textEmojis = ['💀', '🩸', '⚡️', '💨', '🕷️', '🎯', '🛡️', '✨', '🔥', '☠️'];
 
-        const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
+        let reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
         let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
 
         // Ensure reaction and text emojis are different
@@ -24,15 +26,22 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
             textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
         }
 
-        // Send reaction using conn.sendMessage()
+        // Send reaction first
         await conn.sendMessage(from, {
-            react: { text: textEmoji, key: mek.key }
+            react: { text: reactionEmoji, key: mek.key }
         });
 
         const end = new Date().getTime();
         const responseTime = (end - start) / 1000;
 
-        const text = `> *sᴜɴɢ sᴘᴇᴇᴅ: ${responseTime.toFixed(2)}m/s ${reactionEmoji}*`;
+        const text = `
+╔══════════════════════╗
+║ ⚡ ᴘɪɴɢ ʀᴇsᴘᴏɴsᴇ ⚡
+╠══════════════════════╣
+║ 🚨 Response Time: ${responseTime.toFixed(2)} s
+║ 🩸 Emoji: ${textEmoji}
+╚══════════════════════╝
+> 🕷️ *Chainsaw Makima monitoring speed...*`;
 
         await conn.sendMessage(from, {
             text,
@@ -50,9 +59,8 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
 
     } catch (e) {
         console.error("Error in ping command:", e);
-        reply(`An error occurred: ${e.message}`);
+        reply(`❌ An error occurred: ${e.message}`);
     }
 });
 
 // created by malvin king
-
