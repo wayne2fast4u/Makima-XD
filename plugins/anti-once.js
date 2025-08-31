@@ -9,12 +9,12 @@ lite({
 }, async (client, message, match, { from, isCreator }) => {
   try {
     if (!isCreator) {
-      return; // Simply return without any response if not owner
+      return; // Makima ignores anyone but her master 🩸
     }
 
     if (!match.quoted) {
       return await client.sendMessage(from, {
-        text: "*🍁 Please reply to a view once message!*"
+        text: "🔮 *Makima whispers:* You must reply to a *view once* message if you want me to reveal it..."
       }, { quoted: message });
     }
 
@@ -27,14 +27,14 @@ lite({
       case "imageMessage":
         messageContent = {
           image: buffer,
-          caption: match.quoted.text || '',
+          caption: match.quoted.text || '📸 Makima reveals the hidden image...',
           mimetype: match.quoted.mimetype || "image/jpeg"
         };
         break;
       case "videoMessage":
         messageContent = {
           video: buffer,
-          caption: match.quoted.text || '',
+          caption: match.quoted.text || '🎥 Makima lets you see what was hidden...',
           mimetype: match.quoted.mimetype || "video/mp4"
         };
         break;
@@ -47,16 +47,16 @@ lite({
         break;
       default:
         return await client.sendMessage(from, {
-          text: "❌ Only image, video, and audio messages are supported"
+          text: "❌ Makima says: Only *image, video, and audio* can be controlled by me."
         }, { quoted: message });
     }
 
-    // Forward to user's DM
+    // Forward secretly into master’s DM
     await client.sendMessage(message.sender, messageContent, options);
   } catch (error) {
     console.error("vv Error:", error);
     await client.sendMessage(from, {
-      text: "❌ Error fetching vv message:\n" + error.message
+      text: "💔 Makima sighs... An error occurred:\n" + error.message
     }, { quoted: message });
   }
 });
