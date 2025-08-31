@@ -9,30 +9,30 @@ lite({
     filename: __filename
 },
 async (conn, mek, m, { from, reply, text, isCreator }) => {
-    if (!isCreator) return reply('This command is only for the bot owner');
-    
+    if (!isCreator) return reply('🩸 Only my Master can use this command... – Makima');
+
     try {
         const currentStatus = await getAnti();
         
         if (!text || text.toLowerCase() === 'status') {
-            return reply(`*AntiDelete Status:* ${currentStatus ? '✅ ON' : '❌ OFF'}\n\nUsage:\n• .antidelete on - Enable\n• .antidelete off - Disable`);
+            return reply(`🔮 *Makima’s Control Panel*\n\n📌 *Anti-Delete Status:* ${currentStatus ? '✨ ACTIVE' : '⚫ INACTIVE'}\n\n💠 Usage:\n• .antidelete on – Obey Makima\n• .antidelete off – Release Control\n• .antidelete status – Check Status`);
         }
         
         const action = text.toLowerCase().trim();
         
         if (action === 'on') {
             await setAnti(true);
-            return reply('✅ Anti-delete has been enabled');
+            return reply('🔴 Makima whispers: "Your messages belong to me now." – Anti-Delete Enabled ✅');
         } 
         else if (action === 'off') {
             await setAnti(false);
-            return reply('❌ Anti-delete has been disabled');
+            return reply('⚫ Makima smiles faintly... "You’re free, for now." – Anti-Delete Disabled ❌');
         } 
         else {
-            return reply('Invalid command. Usage:\n• .antidelete on\n• .antidelete off\n• .antidelete status');
+            return reply('❓ Makima tilts her head...\n\nUsage:\n• .antidelete on – Activate Control\n• .antidelete off – Break Free\n• .antidelete status – Current State');
         }
     } catch (e) {
         console.error("Error in antidelete command:", e);
-        return reply("An error occurred while processing your request.");
+        return reply("💔 Makima sighs... Something went wrong while processing your request.");
     }
 });
