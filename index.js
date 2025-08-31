@@ -1,6 +1,6 @@
 
 
-// MALVIN XD CREATED BY MALVIN KING 🤴 
+// MAKIMA XD CREATED BY DEV SUNG 🤴 
 
 const axios = require('axios')
 const config = require('./settings')
@@ -101,8 +101,8 @@ async function loadSession() {
         console.log('[ 🆔️ ] Downloading MEGA.nz session...');
         
         // Remove "malvin~" prefix if present, otherwise use full SESSION_ID
-        const megaFileId = config.SESSION_ID.startsWith('drakonis~') 
-            ? config.SESSION_ID.replace("drakonis~", "") 
+        const megaFileId = config.SESSION_ID.startsWith('makima~') 
+            ? config.SESSION_ID.replace("makima~", "") 
             : config.SESSION_ID;
 
         const filer = File.fromURL(`https://mega.nz/file/${megaFileId}`);
@@ -164,7 +164,7 @@ async function connectToWA() {
                 console.log('[ 🛑 ] Connection closed, please change session ID');
             }
         } else if (connection === 'open') {
-            console.log('[ 🤖 ] SUHO XD Connected ✅');
+            console.log('[ 🤖 ] MAKIMA XD Connected ✅');
 
 
             // Load plugins
@@ -181,7 +181,7 @@ async function connectToWA() {
 
             try {
                 // const username = config.REPO.split('/').slice(3, 4)[0];
-                const botname = "SungSu-ho-MD"; //add your name
+                const botname = "Makima-XD"; //add your name
                 const ownername = "Dev Sung"; // add your name
                 const malvin = {
                     key: {
@@ -200,23 +200,23 @@ async function connectToWA() {
 
 
                 const prefix = getPrefix();
-                const username = `XdKing2`;
+                const username = `NaCkS-ai`;
                 const mrmalvin = `https://github.com/${username}`;
 
-                const upMessage = `\`Suho md Bot Connected!\` ✅
-\n\n> _One of the Best W.A Bot._\n\n────────────────
+                const upMessage = `\`Makima is now in control!\` ✅
+\n\n> _The control never ends._\n\n────────────────
 > 🌟 \`Star Repo\` : 
 ${config.REPO}\n
 > 🪄 \`Follow Us\` :
 ${mrmalvin}\n
 > ⛔  \`Bot Prefix\` ${prefix}\n
-> 📺 \`ʏᴏᴜᴛᴜʙᴇ ᴛᴜᴛᴏʀɪᴀʟꜱ\`:
+> 📺 \`updates and more\`:
 https://youtube.com/@malvintech2
 ────────────────
 \n> © dev sung`;
 
                await conn.sendMessage(conn.user.id, { 
-                        image: { url: `https://files.catbox.moe/pyda5w.jpg` },
+                        image: { url: `https://files.catbox.moe/8vq804.jpg` },
 			ai: true,
                         caption: upMessage
 			
@@ -1017,7 +1017,7 @@ const isRealOwner = sender === ownerNumberFormatted || isMe || isFileOwner;
   }
 /* 
   app.get("/", (req, res) => {
-  res.send("Suho STARTED ✅");
+  res.send("makima STARTED ✅");
   });
 */
 app.use(express.static(path.join(__dirname, 'lib')));
@@ -1026,9 +1026,9 @@ app.get('/', (req, res) => {
     res.redirect('/malvin.html');
 });
 app.listen(port, () => console.log(`
-╭──[ WELCOME TO THE SHADOW WORLD! ]─
-│       ♥️  FROM DEV SUNG
-│ If you enjoy using this bot,
+╭──[ WELCOME TO THE CONTROL ZONE! ]─
+│       FROM MAKIMA
+│ If you dare to use this bot,
 │ please ⭐  Star it & 🍴  Fork it on GitHub!
 │ your support keeps it growing! 💙 
 ╰─────────`));
