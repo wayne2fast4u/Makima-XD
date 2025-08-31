@@ -1,13 +1,13 @@
 
 {
-  "name": "suho-md",
-  "version": "0.0.6",
+  "name": "makima-xd",
+  "version": "1.0.0",
   "description": "A WhatsApp Bot Created By Mr Sung",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name lite",
-    "stop": "pm2 stop lite",
-    "restart": "pm2 restart lite"
+    "start": "pm2 start index.js --deep-monitoring --attach --name makima",
+    "stop": "pm2 stop makima",
+    "restart": "pm2 restart makima"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "npm:asitha-new-v99",
