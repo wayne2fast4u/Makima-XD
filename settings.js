@@ -16,9 +16,9 @@ module.exports = {
   SESSION_ID: process.env.SESSION_ID || "", // Your bot's session ID (make sure it starts with suho~)
   PREFIX: getConfig("PREFIX") || ",", // Command prefix (e.g., ., /, !, *)
   CHATBOT: getConfig("CHATBOT") || "on", // Chatbot mode: on/off
-  BOT_NAME: process.env.BOT_NAME || getConfig("BOT_NAME") || "Sung-Suho-MD", // Bot display name
+  BOT_NAME: process.env.BOT_NAME || getConfig("BOT_NAME") || "Makima-XD", // Bot display name
   MODE: getConfig("MODE") || process.env.MODE || "private", // Bot mode: public/private/group/inbox
-  REPO: process.env.REPO || "https://github.com/NaCkS-ai/Sung-Suho-MD", // Bot GitHub repo dont change this❗️
+  REPO: process.env.REPO || "https://github.com/NaCkS-ai/Makima", // Bot GitHub repo dont change this❗️
   BAILEYS: process.env.BAILEYS || "@whiskeysockets/baileys", // Baileys version
 
   // ===== OWNER & DEVELOPER SETTINGS =====
@@ -33,7 +33,7 @@ module.exports = {
   AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*Just seen ur status 😆 🤖*", // Status reply message
   READ_MESSAGE: process.env.READ_MESSAGE || "false", // Mark messages as read automatically?
   REJECT_MSG: process.env.REJECT_MSG || "*📵 Calls are not allowed on this number unless you have permission. 🚫*", // Message on rejected call
-  ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/eeeypw.jpg",
+  ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/8vq804.jpg",
 // add img for alive msg
 
   LIVE_MSG: process.env.LIVE_MSG || "> ʙᴏᴛ ɪs sᴘᴀʀᴋɪɴɢ ᴀᴄᴛɪᴠᴇ ᴀɴᴅ ᴀʟɪᴠᴇ\n\n\nᴋᴇᴇᴘ ᴜsɪɴɢ ✦Sung-Suho-MD✦ ғʀᴏᴍ sung ᴛᴇᴄʜ ɪɴᴄ⚡\n\n\n*© ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ - ᴍᴅ\n\n> ɢɪᴛʜᴜʙ :* github.com/NaCkS-ai/Sung-Suho-MD",
@@ -51,7 +51,7 @@ module.exports = {
   AUTO_RECORDING: process.env.AUTO_RECORDING || "false", // Auto-record voice notes
   AUTO_TYPING: process.env.AUTO_TYPING || "false", // Show typing indicator
   MENTION_REPLY: process.env.MENTION_REPLY || "false", // Reply when mentioned
-  MENU_IMAGE_URL: getConfig("MENU_IMAGE_URL") || "https://files.catbox.moe/eeeypw.jpg", // Menu image URL
+  MENU_IMAGE_URL: getConfig("MENU_IMAGE_URL") || "https://files.catbox.moe/8vq804.jpg", // Menu image URL
 
   // ===== SECURITY & ANTI-FEATURES =====
   ANTI_DELETE: process.env.ANTI_DELETE || "true", // Recover deleted messages
@@ -65,7 +65,7 @@ module.exports = {
   PM_BLOCKER: process.env.PM_BLOCKER || "true", // Block private messages?
 
   // ===== BOT BEHAVIOR & APPEARANCE =====
-  DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ suho-md*", // Bot description/footer
+  DESCRIPTION: process.env.DESCRIPTION || "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ makima-md*", // Bot description/footer
   PUBLIC_MODE: process.env.PUBLIC_MODE || "true", // Allow public commands?
   ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "false", // Show bot always online
   AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true", // React to status updates
