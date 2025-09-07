@@ -4,7 +4,7 @@ const { lite, commands } = require('../lite');
 lite({
     pattern: "ping",
     alias: ["speed","pong"],
-    use: '.ping',
+    use: ".ping",
     desc: "Check bot's response time.",
     category: "main",
     react: "⚡",
@@ -15,52 +15,53 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
         const start = new Date().getTime();
 
         // Makima/Chainsaw Man themed emojis
-        const reactionEmojis = ['🩸', '💀', '⚡', '🔥', '🕷️', '💥', '☠️', '🩸', '🕐', '🔹'];
-        const textEmojis = ['💀', '🩸', '⚡️', '💨', '🕷️', '🎯', '🛡️', '✨', '🔥', '☠️'];
+        const reactionEmojis = ['🩸','👁️','💀','⚡','🔥','🕷️','☠️','💥','🎭','🕐'];
+        const textEmojis = ['🩸','👁️','💀','⚡','🔥','🕷️','☠️','💨','✨','🎯'];
 
         let reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
         let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
 
-        // Ensure reaction and text emojis are different
+        // Avoid duplicates
         while (textEmoji === reactionEmoji) {
             textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
         }
 
-        // Send reaction first
-        await conn.sendMessage(from, {
-            react: { text: reactionEmoji, key: mek.key }
-        });
+        // React first
+        await conn.sendMessage(from, { react: { text: reactionEmoji, key: mek.key } });
 
         const end = new Date().getTime();
         const responseTime = (end - start) / 1000;
 
+        // Darker Makima-styled caption
         const text = `
-╔══════════════════════╗
-║ ⚡ ᴘɪɴɢ ʀᴇsᴘᴏɴsᴇ ⚡
-╠══════════════════════╣
-║ 🚨 Response Time: ${responseTime.toFixed(2)} s
-║ 🩸 Emoji: ${textEmoji}
-╚══════════════════════╝
-> 🕷️ *Chainsaw Makima monitoring speed...*`;
+╔═══ ❖ • ✦ • ❖ ═══╗
+      👁️ *ᴍᴀᴋɪᴍᴀ ᴘɪɴɢ* 👁️
+╚═══ ❖ • ✦ • ❖ ═══╝
+
+⚡ *Response Time:* ${responseTime.toFixed(2)} s  
+🩸 *Random Seal:* ${textEmoji}  
+
+「 Chainsaw Domain • Makima is watching 」
+        `.trim();
 
         await conn.sendMessage(from, {
             text,
             contextInfo: {
                 mentionedJid: [sender],
-                forwardingScore: 999,
+                forwardingScore: 777,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363402507750390@newsletter',
-                    newsletterName: "ᴍʀ sᴜɴɢ",
-                    serverMessageId: 143
+                    newsletterName: "👁️ ᴍᴀᴋɪᴍᴀ ɴᴇᴛᴡᴏʀᴋ",
+                    serverMessageId: 999
                 }
             }
         }, { quoted: mek });
 
     } catch (e) {
         console.error("Error in ping command:", e);
-        reply(`❌ An error occurred: ${e.message}`);
+        reply(`❌ *Makima whispers:* ${e.message}`);
     }
 });
 
-// created by malvin king
+// themed by malvin king
