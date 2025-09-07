@@ -6,7 +6,7 @@ lite({
     alias: ["developer", "dev"],
     desc: "Displays the developer info",
     category: "owner",
-    react: "👹", // Makima vibe instead of 👨‍💻
+    react: "👁️", // Ominous Makima vibe
     filename: __filename
 }, async (conn, mek, m, {
     from, reply, pushname
@@ -15,41 +15,42 @@ lite({
         const name = pushname || "Human";
 
         const text = `
-╭─❍『 🩸 ᴍᴀᴋɪᴍᴀ's ᴄᴏɴᴛʀᴀᴄᴛ 』❍─
-│
-│ 👁 Hello, *${name}*...
-│
-│ 🔗 You seek *my master*?
-│    Then listen carefully.
-│
-│ 👨‍💻 *OWNER DETAILS:*
-│ ───────────────
-│ 🧠 *Name* : Mr Sung (Suho)
-│ 🕯️ *Age* : +20
-│ ☎️ *Contact* : wa.me/1(236)362-1958
-│ ▶️ *YouTube* :
-│    https://youtube.com/@malvintech2
-│
-│ 🩸 Power flows only through him.
-╰─⭓ ᴏʙᴇʏ ᴍᴀᴋɪᴍᴀ ──────⭓`.trim();
+╔═══ ❖ • ✦ • ❖ ═══╗
+       🩸 *ᴍᴀᴋɪᴍᴀ's ᴄᴏɴᴛʀᴀᴄᴛ* 🩸
+╚═══ ❖ • ✦ • ❖ ═══╝
+
+👁 Greetings, *${name}*...
+You dare to seek *my master*?
+
+👨‍💻 *OWNER DETAILS*
+──────────────────
+🧠 *Name:* Mr Sung (Suho)  
+🕯️ *Age:* +20  
+☎️ *Contact:* wa.me/12363621958  
+▶️ *YouTube:*  
+   https://youtube.com/@malvintech2  
+
+🩸 *Power flows only through him...*  
+Obey, or be consumed.
+        `.trim();
 
         await conn.sendMessage(from, {
-            image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/qsy2xx.jpg' }, // Makima art
+            image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/qsy2xx.jpg' }, // Makima art fallback
             caption: text,
             contextInfo: {
                 mentionedJid: [m.sender],
-                forwardingScore: 999,
+                forwardingScore: 1000,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363402507750390@newsletter',
-                    newsletterName: '『 ᴍᴀᴋɪᴍᴀ x sᴜʜᴏ 』',
-                    serverMessageId: 143
+                    newsletterName: '👁️ ᴍᴀᴋɪᴍᴀ ɴᴇᴛᴡᴏʀᴋ',
+                    serverMessageId: 666
                 }
             }
         }, { quoted: mek });
 
     } catch (e) {
-        console.error("Error in .dev command:", e);
-        reply(`❌ Error: ${e.message}`);
+        console.error("Error in .owner command:", e);
+        reply(`❌ *Makima whispers:* ${e.message}`);
     }
 });
