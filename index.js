@@ -545,7 +545,7 @@ const isRealOwner = sender === ownerNumberFormatted || isMe || isFileOwner;
 	  
 	  // take commands 
                  
-  const events = require('./malvin')
+  const events = require('./lite')
   const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
   if (isCmd) {
   const cmd = events.commands.find((cmd) => cmd.pattern === (cmdName)) || events.commands.find((cmd) => cmd.alias && cmd.alias.includes(cmdName))
