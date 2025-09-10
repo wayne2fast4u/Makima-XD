@@ -2,7 +2,7 @@ const { lite } = require('../lite');
 
 lite({
     pattern: "hack",
-    desc: "Displays a dynamic and playful 'Hacking' message for fun.",
+    desc: "Makima-themed playful 'Hacking' message.",
     category: "fun",
     filename: __filename
 },
@@ -13,26 +13,26 @@ async (conn, mek, m, {
         // Get the bot owner's number dynamically from conn.user.id
         const botOwner = conn.user.id.split(":")[0]; // Extract the bot owner's number
         if (senderNumber !== botOwner) {
-            return reply("❌ Only the bot owner can use this command.");
+            return reply("❌ *Only Makima’s true master may run this ritual.*");
         }
 
         const steps = [
-            '💻 *HACK STARTING...* 💻',
-            '*Initializing hacking tools...* 🛠️',
-            '*Connecting to remote servers...* 🌐',
-            '```[█▒▒▒▒] 10%``` ⏳',
-            '```[██▒▒▒▒] 30%``` ⏳',
+            '👁 *MAKIMA PROTOCOL INITIATED...* 🩸',
+            '*Summoning Control Devils...* 🔗',
+            '*Binding contracts with souls...* 🕷️',
+            '```[█▒▒▒▒▒▒] 10%``` ⏳',
+            '```[██▒▒▒▒▒] 30%``` ⏳',
             '```[████▒▒▒] 50%``` ⏳',
             '```[██████▒] 70%``` ⏳',
             '```[████████] 90%``` ⏳',
             '```[████████] 100%``` ✅',
-            '🔒 *System Breach: Successful!* 🔓',
-            '🚀 *Executing final commands...* 🎯',
-            '*📡 Transmitting data...* 📤',
-            '_🕵️‍♂️ Covering tracks..._ 🤫',
-            '*🔧 Finalizing operations...* 🏁',
-            '⚠️ *Note:* This is a joke command for fun.',
-            '> *HACK COMPLETE ☣*'
+            '🩸 *Obedience Protocol: Successful!* 💀',
+            '👁 *Executing Makima’s will...* 🪄',
+            '*📡 Controlling networks...* 🌐',
+            '_💤 Erasing free will..._ 🩸',
+            '*🔧 Finalizing domination...* 🏁',
+            '⚠️ *Note:* This is a fun roleplay command — no real hacking.',
+            '> *CONTRACT SEALED ☣ — OBEY MAKIMA*'
         ];
 
         for (const line of steps) {
