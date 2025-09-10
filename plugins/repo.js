@@ -12,7 +12,7 @@ lite({
     category: "main",
     filename: __filename
 }, async (conn, mek, m, { from, reply }) => {
-    const githubRepoURL = 'https://github.com/NaCkS-ai/Sung-Suho-MD';
+    const githubRepoURL = 'https://github.com/NaCkS-ai/Makima-XD';
 
     try {
         const [, username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
