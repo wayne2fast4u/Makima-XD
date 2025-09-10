@@ -17,32 +17,36 @@ lite({
     alias: ["addsudo", "addowner","sudo"],
     desc: "Add a temporary owner",
     category: "owner",
-    react: "🎭",
+    react: "🩸", // Makima vibe
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply }) => {
     try {
-        if (!isCreator) return reply("_❗This Command Can Only Be Used By My Owner!_");
+        if (!isCreator) return reply("❗ *Only Makima’s true master can use this command.*");
 
-        // Identify the target user
         let target = m.mentionedJid?.[0] 
             || (m.quoted?.sender ?? null)
             || (args[0]?.replace(/[^0-9]/g, '') + "@s.whatsapp.net");
 
-        if (!target) return reply("❌ Please provide a number or tag/reply a user.");
+        if (!target) return reply("🔗 *Obey Makima... Provide a number or mention/reply a user.*");
 
         let owners = JSON.parse(fs.readFileSync(OWNER_PATH, "utf-8"));
 
         if (owners.includes(target)) {
-            return reply("❌ This user is already a temporary owner.");
+            return reply("👁 *This soul already belongs to Makima.*");
         }
 
         owners.push(target);
         const uniqueOwners = [...new Set(owners)];
         fs.writeFileSync(OWNER_PATH, JSON.stringify(uniqueOwners, null, 2));
 
-        const successMsg = "✅ Successfully Added User As Temporary Owner";
+        const successMsg = `
+╭─❍『 ᴄᴏɴᴛʀᴀᴄᴛ ꜱᴇᴀʟᴇᴅ 』❍─
+│ ✅ User is now bound as a *Sudo Owner*.
+╰───────────────────────⭓
+`.trim();
+
         await conn.sendMessage(from, {
-            image: { url: "https://files.catbox.moe/eeeypw.jpg" },
+            image: { url: "https://files.catbox.moe/eeeypw.jpg" }, // Makima art
             caption: successMsg
         }, { quoted: mek });
     } catch (err) {
@@ -57,28 +61,33 @@ lite({
     alias: ["delowner", "deletesudo"],
     desc: "Remove a temporary owner",
     category: "owner",
-    react: "🫩",
+    react: "⚰️",
     filename: __filename
 }, async (conn, mek, m, { from, args, q, isCreator, reply }) => {
     try {
-        if (!isCreator) return reply("_❗This Command Can Only Be Used By My Owner!_");
+        if (!isCreator) return reply("❗ *Only Makima’s true master can revoke contracts.*");
 
         let target = m.mentionedJid?.[0] 
             || (m.quoted?.sender ?? null)
             || (args[0]?.replace(/[^0-9]/g, '') + "@s.whatsapp.net");
 
-        if (!target) return reply("❌ Please provide a number or tag/reply a user.");
+        if (!target) return reply("🔗 *Provide a number or mention/reply a user to release their contract.*");
 
         let owners = JSON.parse(fs.readFileSync(OWNER_PATH, "utf-8"));
 
         if (!owners.includes(target)) {
-            return reply("❌ User not found in owner list.");
+            return reply("👁 *This soul was never under Makima’s control.*");
         }
 
         const updated = owners.filter(x => x !== target);
         fs.writeFileSync(OWNER_PATH, JSON.stringify(updated, null, 2));
 
-        const successMsg = "✅ Successfully Removed User As Temporary Owner";
+        const successMsg = `
+╭─❍『 ᴄᴏɴᴛʀᴀᴄᴛ ʙʀᴏᴋᴇɴ 』❍─
+│ ⚰️ User has been released from *Sudo Owner*.
+╰───────────────────────⭓
+`.trim();
+
         await conn.sendMessage(from, {
             image: { url: "https://files.catbox.moe/eeeypw.jpg" },
             caption: successMsg
@@ -95,23 +104,28 @@ lite({
     alias: ["listowner"],
     desc: "List all temporary owners",
     category: "owner",
-    react: "📋",
+    react: "📜",
     filename: __filename
 }, async (conn, mek, m, { from, isCreator, reply }) => {
     try {
-        if (!isCreator) return reply("_❗This Command Can Only Be Used By My Owner!_");
+        if (!isCreator) return reply("❗ *Only Makima’s true master can see the contract list.*");
 
         let owners = JSON.parse(fs.readFileSync(OWNER_PATH, "utf-8"));
         owners = [...new Set(owners)];
 
         if (owners.length === 0) {
-            return reply("❌ No temporary owners found.");
+            return reply("📭 *No souls are currently bound under Makima.*");
         }
 
-        let listMessage = "`🤴 List of Sudo Owners:`\n\n";
+        let listMessage = `
+╭─❍『 ᴍᴀᴋɪᴍᴀ’s ᴄᴏɴᴛʀᴀᴄᴛᴇᴅ 』❍─
+`.trim();
+
         owners.forEach((owner, i) => {
-            listMessage += `${i + 1}. ${owner.replace("@s.whatsapp.net", "")}\n`;
+            listMessage += `\n│ ${i + 1}. wa.me/${owner.replace("@s.whatsapp.net", "")}`;
         });
+
+        listMessage += `\n╰───────────────────────⭓`;
 
         await conn.sendMessage(from, {
             image: { url: "https://files.catbox.moe/eeeypw.jpg" },
@@ -122,4 +136,3 @@ lite({
         reply("❌ Error: " + err.message);
     }
 });
-                
