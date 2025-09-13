@@ -13,19 +13,19 @@ function convertToBool(text, trueValue = 'true') {
 
 module.exports = {
   // ===== BOT CORE SETTINGS =====
-  SESSION_ID: process.env.SESSION_ID || "", // Your bot's session ID 
-  PREFIX: getConfig("PREFIX") || ",", // Command prefix (e.g., ., /, !, *)
-  CHATBOT: getConfig("CHATBOT") || "on", // Chatbot mode: on/off
+  SESSION_ID: process.env.SESSION_ID || "suho~Xd00AKIA#4AEeW91-ZJ5LQpzU-ztK1Y_WMLt8KyN8MxdgvZ9K6e8", // Your bot's session ID 
+  PREFIX: getConfig("PREFIX") || ".", // Command prefix (e.g., ., /, !, *)
+  CHATBOT: getConfig("CHATBOT") || "off", // Chatbot mode: on/off
   BOT_NAME: process.env.BOT_NAME || getConfig("BOT_NAME") || "Makima-XD", // Bot display name
   MODE: getConfig("MODE") || process.env.MODE || "private", // Bot mode: public/private/group/inbox
   REPO: process.env.REPO || "https://github.com/NaCkS-ai/Makima-XD", // Bot GitHub repo dont change this❗️
   BAILEYS: process.env.BAILEYS || "@whiskeysockets/baileys", // Baileys version
 
   // ===== OWNER & DEVELOPER SETTINGS =====
-  OWNER_NUMBER: process.env.OWNER_NUMBER || "27649342626", // Owner WhatsApp number
-  OWNER_NAME: process.env.OWNER_NAME || getConfig("OWNER_NAME") || "Dev Sung", // Owner name
-  DEV: process.env.DEV || "27649342626", // Developer contact number
-  DEVELOPER_NUMBER: '27649342626@s.whatsapp.net', // Developer WhatsApp ID
+  OWNER_NUMBER: process.env.OWNER_NUMBER || "27847505856", // Owner WhatsApp number
+  OWNER_NAME: process.env.OWNER_NAME || getConfig("OWNER_NAME") || "W̴̧̨̢̢̢̢̢̨̢̧̢̧̧̧̧̡̧̡̡̧̡̢̨̢̢̡̛̳̺̺͔͍͈̬̱͇̼̪̠̹̣͔͓͔̘͔̳͈͚̦̣̘͈̪͓̬̟̦̥͙̭̬̪̻̼̼̝̫̠̙̬̰̲̠͖̼͚̤̻̬̠̼̰̱̲̯̞̣͕͓͉̺̰͔͕̱̻̲̞̥̙͙̬̭̥̹̮̮̦̱̦̥̰̖͔͇̜̤͓̫̩̖͎̩̙͉̹̮̬̝̱̯̰̺̠̱̱̣͈̺̥̻̜̲̤̰̬̤̟͇̩͈̜͇̖̮̙̟̦͈̬̫̤̙̮͓̺̟͎̰̺̝̻̯̼̺̠̞̼̫͔̳͕͕̦͎̞̰̠̜͙̤̹̬͈̣̮̳͓̞̳̣͍͔̹͕̟͉͍̪͎̗̱͖͎̼̱̭͖̳̘̻̮͕̙̮̭̘̹̬̤̼̯͖̼̻͈̗̥̜̱̹̝͎̻̫̜̺̺̟̟̤͇͖̰̥̭̦̝̪͔͓͕̹̟̃̽̐̏̐̏̇̌̈͗̿̅̎̆͂̂̀̓͂̌̓́̀̀̂̃̆͛͗̄̓̅͋̆̑͘͘̚̚͜͜͜͜͜͜͜͜͜͜͜͜͝͝͝͠ͅͅͅͅͅͅͅA̶̢̧̧̡̨̧̢̛̛̛̛̛͕̪͖̠͕̬̭͕̲͍͓̟͎͕̩͇̤̦̺̮͉͕̭̖̳͔̼͔͖͈̞̖̝̠̝̘̜̬̫̫͙̫̮͓̦̥̱̟̰̖̺̺͙͔͓̰̤̣̲̳̯̬̦͚̙̪̝͎̞͖̘̼̙̖̬͕͂͛͌̍́͑̓̏͌̽͋͐̉̽̅͛̀̆̌̎͊̃̃̒͗͊̈́̈́̉̋̑͛̆͂̆̔̾̎̐͊̐̏̂̑̊̑̌͑̆͋̇̋̀̕̕̚̕͘̚̕͜͜͜͝͝͝͝ͅY̴̨̧̨̢̧̨̧̧̧̧̢̨̡̛̛̛͇̥̮̺͔̥͓͍͉̭̥̯̥̻͖̹̯̠͔͎͙̼̣͈̯̤͓̘̰̭̻͈̫̥͚̭͎̗͖̳̣͔͍͇̗̖͖̬͙͚̭͉̲̞̱̗̗̲̳̯͚͕͉͕̣͍͚̮͔͚͎̬̤̝̩͍̳͎͔̣͓̹͚̭̰̭̤͙̣̙͕̱̭̻̝̫͍͎̥̣̦͙̭̟̳̤̪͙̩̜̥͇̺̣̜͕͍̰͓̰͉̮̳̤̻͍͎̲͕͔̰͈̼͇̤͉̱̱̲̲͖͖̻̲͈͇͔͎̱͓͇̱̼̟̫̯͕̰͈̳͓̘̭͙͔͓̖̻̱͕͍͙̠̤̦̜̻̙͇̫̳̱̮̥̦̣̟̲̗͈̜̟̩̜̭͎̜̻̝̗͓̹͒͌̽̇̌͌͋́̄̇́̑̀̌̋̀̓̍͗́̇͐́̋͒̊̀͐̄̀̀̈́͊͑͊̈́̐̀̎̈́̍̽̿̊̇͐̍̈́̈́͆̄͛̔̈͂̓͛̈́̇̓͆̎̌̾͌̌̒̽̿͂͒̋͌̿͘̕͘̕̚̕̕͘̚̚͜͜͜͜͜͜͝͠͝͝ͅͅN̵̡̨̢̨̨̢̨̨̧̛̛̻̗̱̳̼͈̬͎̬̹̝̭̗̺̳̝̗̠͇̼̳̻͖͇̝̟̠̱͚̯̜̘̖̩̻͚͈͉̪͇̪͔̬͚̦͕̘̭̣̫̜͙̭͍͖̝̺͇̜͔͙͕̻̦̦͉̝̻̼͇͙̞͚͈̯̱̫͎͔̳̫̥͙͚̠̹͓͕̜͓̟͕̬̠̺͇͙̮̬̼̰̖̜͙̜̦͈̩̘̮̘̭̖̫̫̮͚̼͚̮̫̬̹͍̗̲̯͎̣͉̜̺͕̤̰̺̼͖̰̝̲̺̗̗͍͚̟͔̖̖̺̗̟̠̘͙̱̺̥̩͖̑̄̏͌̉͒̌͒̐͒̓̊̔̍̒̔͗̾̏̇͛̾͑̑̾̒̽̿̈́̉̎̎͆͐̆͌̃̾̄̈́̋̔͑̑̀̊̈́͑̈́̆̊͊̔͒̂̐̾̆͋͐̏̓̊̐̈́̉̈̂̇̆̄͛̿̊̽̆̌̈́̉̐̎͆͑̅̿͂̊͆̃́͑̊̉̈́̈̆͑̆̅̏͊̿̐̊̋̈̒͗̉͗̆͋̈́̀̈́́̋͋̇́̋̕̚͘͘͘̕̚͜͜͝͝͝͝͝͠͝͝͝͝͠͝ͅͅͅȨ̴̨̨̧̡̨̡̨̧̢̧̢̢̨̧̢̢̡̛̛͔̝̮̻̬̬͚̥̙͎̘͎̮̟̬̜͖͖̦͎͓̬͉̺͕̣̜̙̜̥͉͙̖̗̞̱̲̺͖̥̬̥̫̤̲̠̜͚̤͚͕͎̙̹̼̜̳̤̭̜̙̗͎͍̹̱̘̤̗͚̜͍͉͓̙͇̭̝̰̫̬̗͍̥̘̟̪̳̺̬͖͕̗͍̰̭̫͖͍͚̥̠͓̟̬̤͍̼̘͈͖͉̝̞̻͉̫͈͍̬̼̱͉͔̹̞͇̱̼͔̦̪̺̮̜͎̙̝̤̭̲̬̦̝̖̱̦̥̦͈͈̰̝̮̥̘̫̱̰̞͕͈̞̪͍̖͚͓͔̘̣͎͉̲̩͔̟̹͕͉̺̼̩̤͍̠͔͖̱͉̠͎͇̩̬̱͉̘́̓̿̌̃̏̉́͛̌́̉͌̈́̎́̀͋̀̐͊͗̃͂̀̾̓̐̎͌̒͌͊͊̅̆̋̓̐̈́͊̈́̅͊͑͂̄̓̌̅͌̏͒̓̌̕͘͘͘̕̕͘̕͜͜͜͜͜͜͜͜͝ͅͅͅͅͅͅͅͅͅ", // Owner name
+  DEV: process.env.DEV || "27847505856", // Developer contact number
+  DEVELOPER_NUMBER: '27847505856@s.whatsapp.net', // Developer WhatsApp ID
 
   // ===== AUTO-RESPONSE SETTINGS =====
   AUTO_REPLY: process.env.AUTO_REPLY || "false", // Enable auto-reply
@@ -41,7 +41,7 @@ module.exports = {
 
   // ===== REACTION & STICKER SETTINGS =====
   AUTO_REACT: process.env.AUTO_REACT || "false", // Auto-react to messages
-  OWNER_REACT: process.env.OWNER_REACT || "false", // Owner-specific reacts
+  OWNER_REACT: process.env.OWNER_REACT || "true, // Owner-specific reacts
   CUSTOM_REACT: process.env.CUSTOM_REACT || "false", // Use custom emoji reactions
   CUSTOM_REACT_EMOJIS: getConfig("CUSTOM_REACT_EMOJIS") || process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🩹,❤️,🧡,💛,💚,💙,💜,🤎,🖤,🤍", // Custom react emojis
   STICKER_NAME: process.env.STICKER_NAME || "ᴋʜᴀɴ-ᴍᴅ", // Sticker pack name
